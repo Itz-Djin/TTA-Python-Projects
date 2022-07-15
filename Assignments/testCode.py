@@ -11,10 +11,13 @@ def color_function(name):
         lst.append(msg)
     return lst
 
+def get_name():
+    name = input('What is your name? ')
+    lst = color_function(name)
+    for i in lst:
+        print(i)
 
 
-
-lst = color_function('John')
-for i in lst:
-    print(i)
+get_name()
+                 
 
