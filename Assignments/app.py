@@ -5,4 +5,3 @@ def print_app():
     return
 
 
-print_app()
