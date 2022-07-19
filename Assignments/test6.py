@@ -2,19 +2,24 @@
 
 
 def getInfo():
-    var1 = input("Please provide the first numeric value: ")
-    var2 = input("Please provide the second numeric value: ")
-    compute(var1, var2)
+    var1 = input("\nPlease provide the first numeric value: ")
+    var2 = input("\nPlease provide the second numeric value: ")
+    return(var1, var2)
 
 
-def compute(var1, var2):
-    try:
-        var3 = int(var1) + int(var2)
-        print("{} + {} = {}".format(var1, var2, var3))
-    except ValueError:
-        print("You did not provide a numberic value!")
-    except:
-        print("Oops, you provided invalid input, program will close now!")
+def compute():
+    go = True
+    while go:
+        var1, var2 = getInfo()
+        try:
+            var3 = int(var1) + int(var2)
+            go = False
+        except ValueError as e:
+            print("{}: \n\nYou did not provide a numberic value!".format(e))
+        except:
+            print("\n\nOops, you provided invalid input, program will close now!")
+    print("{} + {} = {}".format(var1, var2, var3))
+
 
 
 
@@ -22,4 +27,4 @@ def compute(var1, var2):
 
 
 if __name__ == "__main__":
-    getInfo()
+    compute()
