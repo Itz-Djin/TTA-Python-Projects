@@ -85,7 +85,7 @@ def lose(nice,mean,name):
     # Substitute the {} wildcards with our variable values
     print("\nAhhh too bad, game over! \n{}, you live in a dirty beat-up \nvan by the river, wretched and alone!".format(name))
     # call again function and pass in our variables
-    again(nice,man,name)
+    again(nice,mean,name)
 
 
 def again(nice,mean,name):
