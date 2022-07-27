@@ -13,8 +13,9 @@ for file in fileList:
                     File_Title TEXT, \
                     Extension TEXT \
                     )")
-            cur.execute("INSERT INTO tbl_txtFiles(File_Title, Extension) VALUES (?, ?)"
-                        ("Hello", ".txt")
+            cur.execute("INSERT INTO tbl_txtFiles(File_Title, Extension) VALUES (?, ?)" \
+                        ("Hello", ".txt"))
+            cur.execute("INSERT INTO tbl_txtFiles(File_Title, Extension) VALUES (?, ?)" \
                         ("World", ".txt"))
             conn.commit()
         conn.close()
