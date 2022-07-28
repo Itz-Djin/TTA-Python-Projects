@@ -1,7 +1,4 @@
 #Class Challenge
-from cgitb import small
-
-
 class Computer:
     def __init__(self, GPU, CPU, M2Drive):
         self.GPU = GPU
