@@ -1,10 +1,5 @@
 # Polymorphism Challenge
 # Created parent class person
-from multiprocessing import managers
-from multiprocessing.pool import MapResult
-from os import remove
-
-
 class Employee:
     # Set a variable with a data type float
     raise_amt = 1.04
