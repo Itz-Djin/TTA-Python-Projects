@@ -11,3 +11,16 @@ def myFun(*args):
         print(arg)
 
 myFun('This is an example of args', 'string', 'and then an integer', 5, 'You can add', 'as many arguments', 'up to the max limit')
+
+
+# Kwargs (short for "keyword arguments") is also a special syntax, just like *args
+# Written as **kwargs where the asterisks ** represent a key value pair
+# Also used to pass in any number of undefined arguments into a function
+# Acts as a dictionary, mapping out the value to its corresponding variable key
+# The use of **args is another way of writing kwargs
+
+# Example
+def myKwargs(**kwargs):
+    print("kwargs", kwargs)
+
+myKwargs(first = '1', second = '2', third = '3')

@@ -16,6 +16,10 @@ class Employee:
     # Created a method that will multipy the set float of the raise_amt variable to a Persons(s) pay
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amt)
+    
+    # Simple method we'll polymorph in child classes
+    def action(self):
+        print('All the employees work in building A')
 
 # Created child class Developer
 class Developer(Employee):
@@ -26,6 +30,10 @@ class Developer(Employee):
         super().__init__(first, last, pay)
         self.prog_lang = prog_lang
         self.monitors = monitors
+
+    # Polymphorism on parent class method
+    def action(self):
+        print('Developers work in section 1 of building A')
 
 #Created child class Manager
 class Manager(Employee):
@@ -54,6 +62,10 @@ class Manager(Employee):
     def print_emps(self):
         for emp in self.employees:
             print('-->', emp.fullname())
+
+    # Polymphorism on parent class method
+    def action(self):
+        print('Managers work in section 2 of building A')
 
 # Instantiated 2 Developer Objects
 dev_1 = Developer('Matt', 'Ziggler', 50000, 'Python', 1)
