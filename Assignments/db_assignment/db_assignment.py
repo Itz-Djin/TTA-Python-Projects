@@ -21,15 +21,17 @@ fileList = ('information.docx', 'Hello.txt', 'myImage.png', 'myMovie.mpg', 'Worl
 for file in fileList:
     #if the file name ense with ".txt" then...
     if file.endswith('.txt'):
-        #re-establishes 'conn' conecction to the database
+        #re-establishes 'conn' conection to the database
         conn = sqlite3.connect('filelist.db')
 
         #opens connection to database and says what to do with said connection
         with conn:
+            #redefines the cursor obrject used to interact with the database
+            cur = conn.cursor()
+
             #executes the SQL statement to insert the 'file' variable into the table
             cur.execute("INSERT INTO tbl_txtFiles(File_Title) VALUES (?)" \
                 (file,))
-
             #Displays the name of the file
             print(file)
             #commits changes to database
