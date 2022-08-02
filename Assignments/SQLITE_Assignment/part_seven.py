@@ -8,7 +8,7 @@ with sqlite3.connect('test_database.db') as connection:
     c.execute("CREATE TABLE People(FirstName TEXT, LastName TEXT, Age INT)")
     c.executemany("INSERT INTO People VALUES(?, ?, ?)",
                   peopleValues)
-    #select all first and last anmes from people over age 30
+    #select all first and last names from people over age 30
     c.execute("SELECT FirstName, LastName FROM People WHERE Age > 30")
     while True:
         row = c.fetchone()

@@ -68,11 +68,11 @@ with sqlite3.connect("test_database.db") as connection:
 
 '''
 another way to execute many similar statements by using the executemany() method and supplying
-a tuple of tuples where each inner tuple suppplikkes the information for a single command.
+a tuple of tuples where each inner tuple suppplies the information for a single command.
 For instance, if we have a lot of people's information to insert into our People table, we could
 save this information in the following tuple of tuples
 '''
-peopleValues = (('Ron', 'Obious', 42), 'Luigi', 'Vercotti', 43), ('Arthur', 'Belling', 28))
+peopleValues = (('Ron', 'Obious', 42), ('Luigi', 'Vercotti', 43), ('Arthur', 'Belling', 28))
 
 '''
 Then the following comman will insert all of these people at once (after preparing our connection and our People table)
