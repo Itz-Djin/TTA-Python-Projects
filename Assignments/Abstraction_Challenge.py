@@ -2,6 +2,9 @@ from abc import ABC, abstractmethod
 
 #Created abstract parent class
 class Vehicle(ABC):
+
+    def vehiclePrice(self, price):
+        print("The vehicle's price is: ", price)
     #defines the abstract class, preventing any objects to be instantiated of this class
     @abstractmethod
     def go(self):
@@ -34,6 +37,7 @@ car = Car()
 motorcycle = Motorcycle()
 
 #vehicle.go
+car.vehiclePrice("$1,500")
 car.go()
 motorcycle.go()
 car.stop()
