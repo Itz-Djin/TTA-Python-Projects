@@ -1,14 +1,12 @@
-from datetime import datetime
+import datetime
+from xmlrpc.client import DateTime
 import pytz
 
-# current Datetime
-unaware = datetime.now()
-print('Timezone naive:', unaware)
+dt_mtn = datetime.datetime.now(tz=pytz.timezone('US/Mountain'))
 
-# Standard UTC timezone aware Datetime
-aware = datetime.now(pytz.utc)
-print('Timezone Aware:', aware)
+print(dt_mtn.strftime('%B %d, %Y'))
 
-# US/Central timezone datetime
-aware_us_central = datetime.now(pytz.timezone('US/Central'))
-print('US Central DateTime', aware_us_central)
+dt_str = 'August 02, 2022'
+
+dt = datetime.datetime.strptime(dt_str, '%B %d, %Y')
+print(dt)
