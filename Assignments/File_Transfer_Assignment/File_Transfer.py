@@ -75,15 +75,29 @@ class ParentWindow(Frame):
         source_files = os.listdir(source)
         #Runs through each file in the source idrectory
         for i in source_files:
-            #moves each file from the source to the destination
-            shutil.move(source + '/' + i, destination)
-            print(i + ' was successfully transferred.')
+            #gets the absolute path leading up to and including the file name
+            absolutepath = source + '/' + i 
+            #gets the modification of the file in mtime format
+            m_time = os.path.getmtime(absolutepath)
+            #convert the mtime to a proper datetime format
+            modtime = datetime.datetime.fromtimestamp(m_time)
+            #gets the current date and time
+            current = datetime.datetime.now()
+            #gets the time 24 hours ago
+            twentyfour = current - datetime.timedelta(hours=24)
+            #if the modification time is more recent than 24 hours ago, move the file
+            if modtime > twentyfour:
+                #moves each file from the source to the destination
+                shutil.move(source + '/' + i, destination)
+                print(i + ' was successfully transferred.')
 
     #Creates function to exit program
     def exit_program(self):
         #root is the main GUI window, the Tkinter destroy method
         #tells python to terminate root.mainloop and all widgets inside the GUI window
         root.destroy()
+
+
 
 
 
