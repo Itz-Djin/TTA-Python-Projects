@@ -31,9 +31,9 @@ class ParentWindow(Frame):
         self.lbl_customtxt.grid(row=0, column=0, padx=(20,0))
 
         #creates the entry box to add custom text for the HTML page
-        self.ent_customtxt = Entry(self.master, text=self.varCustomText)
+        self.ent_customtxt = Entry(self.master, width=120, text=self.varCustomText)
         #positions the entry field
-        self.ent_customtxt.grid(row=1, column=0, pady=(10, 0))
+        self.ent_customtxt.grid(row=1, column=0, columnspan=10, pady=(10, 0))
 
     #creates the defaultHTML function that creates a default html page
     def defaultHTML(self):
@@ -43,6 +43,7 @@ class ParentWindow(Frame):
         htmlFile.write(htmlContent)
         htmlFile.close()
         webbrowser.open_new_tab("index.html")
+
     #takes in user input from the entry field and creates the users custom html page
     def customText(self):
         htmlText = self.varCustomText.get()
