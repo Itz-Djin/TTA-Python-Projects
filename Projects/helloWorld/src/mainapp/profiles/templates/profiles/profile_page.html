@@ -7,13 +7,13 @@
 {% block content %}
 
 <div class="admin_panel">
-    <form name="productForm" method="POST" action="">
+    <form name="profileForm" method="POST" action="">
         <div class="formObject">
             {% csrf_token %}
             <label for="menu_id">Select a user from the database:</label>
             <select id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
             {% for user in users %}
-                <option value="../{{ p.pk }}/details/">{{ user.fName }}</option>
+                <option value="../{{ user.pk }}/details/">{{ user.fName }}</option>
             {% endfor %}
             </select>
             <div class="fromBtn_container">

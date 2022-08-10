@@ -22,3 +22,5 @@ def details(request, pk):
             print(form.errors)
     else:
         return render(request, 'products/present_product.html', {'form': form})
+
+def delete
