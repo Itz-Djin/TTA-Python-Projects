@@ -20,3 +20,16 @@ def details(request, pk):
             print(form.errors)
     else:
         return render(request, 'profiles/present_profiles.html', {'form': form})
+
+def createUser(request):
+    form = ProfileForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('admin_console')
+    else:
+        print(form.errors)
+        form = ProfileForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'profiles/createUser.html', context)

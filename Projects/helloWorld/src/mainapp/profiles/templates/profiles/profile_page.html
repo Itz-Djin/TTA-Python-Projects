@@ -17,7 +17,7 @@
             {% endfor %}
             </select>
             <div class="fromBtn_container">
-                <a href=""><button type="button" class="btn">Create New User</button></a>
+                <a href="{% url 'createUser' %}"><button type="button" class="btn">Add New User</button></a>
                 <a href="{% url 'home' %}"><button type="button" class="btn">Logout of Profile</button></a>
             </div>
         </div>
