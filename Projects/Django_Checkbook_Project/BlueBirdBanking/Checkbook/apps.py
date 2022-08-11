@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class CheckbookappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'CheckbookApp'
+    name = 'Checkbook'
